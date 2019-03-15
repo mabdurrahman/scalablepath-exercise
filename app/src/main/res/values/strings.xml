@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ScalablePathExercise</string>
+
+    <string name="label_by">By</string>
+</resources>
