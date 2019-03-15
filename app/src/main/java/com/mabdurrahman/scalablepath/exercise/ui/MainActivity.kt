@@ -55,7 +55,7 @@ class MainActivity : AppCompatActivity() {
                 posts.map { post -> PostItem(
                     post.id,
                     post.title,
-                    users.single { user -> user.id == post.userId }.username,
+                    users.single { user -> user.id == post.userId }.name,
                     post.body)
                 }
             })
