@@ -52,10 +52,12 @@ class MainActivity : AppCompatActivity() {
             RestAdapter.getPostsService().listUsers(),
             BiFunction<List<Post>, List<User>, List<PostItem>>
             { posts, users ->
+                val usersIndexed = users.map { it.id to it.name }.toMap()
+
                 posts.map { post -> PostItem(
                     post.id,
                     post.title,
-                    users.single { user -> user.id == post.userId }.name,
+                    usersIndexed[post.userId] ?: getString(R.string.label_anonymous),
                     post.body)
                 }
             })
